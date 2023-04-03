@@ -21,15 +21,18 @@ install:
 	if [ ! -d $(PACKER_DIR) ] ; then\
 		git clone --depth 1 $(PACKER_GIT) $(PACKER_DIR);\
 	fi
-	@echo "→ Adding packer plugins config"
+	@echo "→ Installing packer"
 	mkdir -p $(PACKER_PLUGINS_DIR)
 	ln -nfs $(shell pwd)/$(PLUGINS_FILE) $(PACKER_PLUGINS_DIR)$(PLUGINS_FILE)
 	ln -nfs $(shell pwd)/$(INIT_FILE) $(INIT_FILE_DIR)$(INIT_FILE)
+	@echo "→ Installing plugins"
 	nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 .PHONY: upgrade # Upgrade neovim and packer
 upgrade:
+	@echo "→ Upgrading neovim"
 	brew upgrade nvim
-	cd $(PACKER_DIR)
-	git pull $(PACKER_GIT)
+	@echo "→ Upgrading packer"
+	cd $(PACKER_DIR) && git pull $(PACKER_GIT)
+	@echo "→ Installing plugins"
 	nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
