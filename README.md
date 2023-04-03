@@ -1,22 +1,23 @@
-# Neovim setup
+# Neovim installer
 
-My neovim setup for MacOS that supports `go` and `ruby`.
+Neovim installer for MacOS that supports `go` and `ruby`.
 
 ## Usage
 
-To list the available commands simply type:
+To list the available commands type:
 
 ```bash
 $ make
 install              Install and configure neovim
-upgrade              Upgrade neovim and packer
+remove               Remove distribution
+upgrade              Upgrade distribution
 ```
 
 Running `make install` will provision the neovim with a set of plugins.
 
-This vim distribution uses Powerline fonts. To get sample font and instructions for installation of it check [my dot-files](https://github.com/rustamagasanov/dot-files)
+This neovim distribution uses Powerline fonts. To get the Powerline font and color scheme check out [my dot-files](https://github.com/rustamagasanov/dot-files)
 
-## Plugins included:
+## Plugins list
 
   -  [tomtom/tcomment_vim](https://github.com/tomtom/tcomment_vim) - Commenting features(gc, gcc, etc)
   -  [msanders/snipmate](https://github.com/msanders/snipmate.vim) - Textmate snippets features (<tab> autocomplete)
