@@ -1,10 +1,12 @@
 .DEFAULT_GOAL := help
 
+INIT_FILE    := init.vim
 PLUGINS_FILE := plugins.lua
 
 PACKER_DIR := ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 PACKER_GIT := https://github.com/wbthomason/packer.nvim
 
+INIT_FILE_DIR      := ~/.config/nvim/
 PACKER_PLUGINS_DIR := ~/.config/nvim/lua/
 
 .PHONY: help
@@ -22,9 +24,12 @@ install:
 	@echo "→ Adding packer plugins config"
 	mkdir -p $(PACKER_PLUGINS_DIR)
 	ln -nfs $(shell pwd)/$(PLUGINS_FILE) $(PACKER_PLUGINS_DIR)$(PLUGINS_FILE)
+	ln -nfs $(shell pwd)/$(INIT_FILE) $(INIT_FILE_DIR)$(INIT_FILE)
+	nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 .PHONY: upgrade # Upgrade neovim and packer
 upgrade:
 	brew upgrade nvim
 	cd $(PACKER_DIR)
 	git pull $(PACKER_GIT)
+	nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
