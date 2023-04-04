@@ -1,6 +1,6 @@
 # Neovim installer
 
-Neovim installer for MacOS that supports `go` and `ruby`.
+Neovim installer for developing in `go` and `ruby`.
 
 ## Usage
 
