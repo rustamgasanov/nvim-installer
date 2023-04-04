@@ -17,7 +17,7 @@ Running `make install` will provision the neovim with a set of plugins.
 
 TODO, automate: This neovim distribution uses Powerline fonts. To get the Powerline font and color scheme check out [my dot-files](https://github.com/rustamagasanov/dot-files)
 
-## Files location
+## Installed files location
 
 - `~/.local/share/nvim/site/pack/packer/start/packer.nvim` - *Packer*
 - `~/.local/share/nvim/site/pack/packer/` - Packer plugins
