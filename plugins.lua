@@ -45,8 +45,8 @@ return require('packer').startup(function(use)
   }
 
   -- My color scheme
-  use {'rustamagasanov/color-schemes'}
+  use {'rustamgasanov/color-schemes'}
 
   -- My status line
-  use {'rustamagasanov/vim-airline'}
+  use {'rustamgasanov/vim-airline'}
 end)

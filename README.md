@@ -13,7 +13,7 @@ remove               Remove distribution
 upgrade              Upgrade distribution
 ```
 
-Running `make install` will provision the neovim with a set of plugins.
+Running `make install` will provision the neovim with plugins.
 
 TODO, automate: This neovim distribution uses Powerline fonts. To get the Powerline font and color scheme check out [my dot-files](https://github.com/rustamagasanov/dot-files)
 
