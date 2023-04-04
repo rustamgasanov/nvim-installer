@@ -7,7 +7,6 @@ NVIM_LOCAL_SHARE_DIR := ~/.local/share/nvim
 NVIM_CONFIG_DIR      := ~/.config/nvim
 PACKER_CONFIG_DIR    := $(NVIM_CONFIG_DIR)/lua
 
-# Plugins will be installed under ~/.local/share/nvim/site/pack/packer/start
 PACKER_DIR := $(NVIM_LOCAL_SHARE_DIR)/site/pack/packer/start/packer.nvim
 PACKER_GIT := https://github.com/wbthomason/packer.nvim
 
@@ -15,7 +14,7 @@ PACKER_GIT := https://github.com/wbthomason/packer.nvim
 help:
 	@grep '^.PHONY: .* #' Makefile | sed 's/\.PHONY: \(.*\) # \(.*\)/\1 $(shell echo "\t") \2/' | sort | expand -t20
 
-.PHONY: install # Install and configure neovim
+.PHONY: install # Install neovim, packer, plugins
 install:
 	@echo "→ Installing neovim"
 	brew list nvim || brew install nvim
