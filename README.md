@@ -23,3 +23,7 @@ NOTE: [Nerd font](https://www.nerdfonts.com/) is required to properly display `N
 - `~/.local/share/nvim/site/pack/packer/` - Packer plugins
 - `~/.config/nvim/lua/plugins.lua` - symlink, *plugins list* and configuration
 - `~/.config/nvim/init.vim` - symlink, vim configuration
+
+## Extending
+
+See https://github.com/rockerBOO/awesome-neovim
