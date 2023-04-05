@@ -20,7 +20,7 @@ return require('packer').startup(function(use)
   use 'rstacruz/vim-closer'
 
   -- Highlights matching brackets({} if else end)
-  use {'andymass/vim-matchup'}
+  use 'andymass/vim-matchup'
 
   -- Commenting(gcc)
   use {
@@ -44,9 +44,17 @@ return require('packer').startup(function(use)
     end
   }
 
-  -- My color scheme
-  use {'rustamgasanov/color-schemes'}
+  -- Rails tools
+  use 'tpope/vim-rails'
 
-  -- My status line
-  use {'rustamgasanov/vim-airline'}
+  -- Color scheme
+  use 'folke/tokyonight.nvim'
+
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+    config = function()
+      require("lualine").setup()
+    end
+  }
 end)
