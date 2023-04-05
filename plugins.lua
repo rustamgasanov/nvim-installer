@@ -50,6 +50,7 @@ return require('packer').startup(function(use)
   -- Color scheme
   use 'folke/tokyonight.nvim'
 
+  -- Status line
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true },
