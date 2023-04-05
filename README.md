@@ -15,7 +15,7 @@ upgrade              Upgrade distribution
 
 Running `make install` will provision the neovim with plugins.
 
-TODO, automate: This neovim distribution uses Powerline fonts. To get the Powerline font and color scheme check out [my dot-files](https://github.com/rustamagasanov/dot-files)
+NOTE: [Nerd font](https://www.nerdfonts.com/) is required to properly display `NvimTree` icons and `Status Line`, check [my dot-files](https://github.com/rustamagasanov/dot-files) for instructions.
 
 ## Installed files location
 
