@@ -44,6 +44,12 @@ return require('packer').startup(function(use)
     end
   }
 
+  -- File search
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
   -- Rails tools
   use 'tpope/vim-rails'
 

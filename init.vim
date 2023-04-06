@@ -27,5 +27,9 @@ let g:ale_fix_on_save = 1
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 map <Leader><Leader> :NvimTreeToggle<CR>
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 colorscheme tokyonight-storm
