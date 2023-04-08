@@ -17,24 +17,17 @@ help:
 .PHONY: install # Install neovim, packer, plugins
 install:
 	@echo "→ Installing neovim"
-	brew list nvim || brew install nvim
+	brew upgrade nvim || brew install nvim
 	@echo "→ Installing packer.nvim"
 	if [ ! -d $(PACKER_DIR) ] ; then\
 		git clone --depth 1 $(PACKER_GIT) $(PACKER_DIR);\
+	else\
+		cd $(PACKER_DIR) && git pull $(PACKER_GIT);\
 	fi
 	@echo "→ Installing packer"
 	mkdir -p $(PACKER_CONFIG_DIR)
 	ln -nfs $(shell pwd)/$(PLUGINS_FILE) $(PACKER_CONFIG_DIR)/$(PLUGINS_FILE)
 	ln -nfs $(shell pwd)/$(INIT_FILE) $(NVIM_CONFIG_DIR)/$(INIT_FILE)
-	@echo "→ Installing plugins"
-	nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-
-.PHONY: upgrade # Check for and install upgrades
-upgrade:
-	@echo "→ Upgrading neovim"
-	brew upgrade nvim
-	@echo "→ Upgrading packer"
-	cd $(PACKER_DIR) && git pull $(PACKER_GIT)
 	@echo "→ Installing plugins"
 	nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 

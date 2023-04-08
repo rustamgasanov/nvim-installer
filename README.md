@@ -10,10 +10,9 @@ To list the available commands type:
 $ make
 install              Install neovim, packer, plugins
 remove               Remove distribution
-upgrade              Upgrade distribution
 ```
 
-Running `make install` will provision the neovim with plugins.
+Running `make install` will install or upgrade neovim with plugins.
 
 NOTE: [Nerd font](https://www.nerdfonts.com/) is required to properly display `NvimTree` icons and `Status Line`, check [my dot-files](https://github.com/rustamagasanov/dot-files) for instructions.
 
