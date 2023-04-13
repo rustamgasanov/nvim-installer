@@ -23,10 +23,15 @@ let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'] }
 let g:ale_fix_on_save = 1
 
 " Key mappings
-" Set space as <Leader>
+" Set <space> as <Leader>
 nnoremap <SPACE> <Nop>
 let mapleader=" "
-map <Leader><Leader> :NvimTreeToggle<CR>
-nnoremap <leader>f <cmd>lua require('telescope.builtin').find_files()<cr>
+" <space> + <space> = NvimTree
+nnoremap <Leader><Leader> :NvimTreeToggle<CR>
+" <space> + <f>     = Telescope search
+nnoremap <Leader>f <CMD>lua require('telescope.builtin').find_files()<CR>
+" <ctrl> + <\>      = Open console
+" nnoremap <C-\> :ToggleTerm size=15 direction=horizontal<CR>
+lua require("toggleterm").setup{ direction = "horizontal", size = 15, open_mapping = [[<C-\>]] }
 
 colorscheme tokyonight-storm

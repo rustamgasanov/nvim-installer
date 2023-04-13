@@ -2,6 +2,7 @@
 
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
+vim.g.mapleader = " "
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
@@ -64,4 +65,7 @@ return require('packer').startup(function(use)
       require("lualine").setup()
     end
   }
+
+  -- Toggle terminal
+  use {"akinsho/toggleterm.nvim", tag = '*', config = function() end}
 end)
