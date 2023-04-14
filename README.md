@@ -30,4 +30,3 @@ See https://github.com/rockerBOO/awesome-neovim
 ## TODO
 
 - add gd/gD(go to definition/declaration)
-- replace init with lua

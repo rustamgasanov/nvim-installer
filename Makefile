@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-INIT_FILE    := init.vim
+INIT_FILE    := init.lua
 PLUGINS_FILE := plugins.lua
 
 NVIM_LOCAL_SHARE_DIR := ~/.local/share/nvim
