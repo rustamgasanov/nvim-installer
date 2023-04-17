@@ -40,7 +40,11 @@ return require('packer').startup(function(use)
       'nvim-tree/nvim-web-devicons', -- optional
     },
     config = function()
-      require("nvim-tree").setup {}
+      require("nvim-tree").setup {
+        git = {
+          ignore = false
+        }
+      }
     end
   }
 
