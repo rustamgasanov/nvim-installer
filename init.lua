@@ -21,10 +21,6 @@ vim.opt.expandtab = true -- use spaces instead of tabs
 vim.opt.listchars = "tab:»·,nbsp:·,trail:·,extends:>,precedes:<"
 vim.opt.list = true -- display unprintable characters
 
--- On save, remove trailing lines and whitespaces(or use :ALEFix)
-vim.cmd("let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'] }")
-vim.g.ale_fix_on_save = 1
-
 function map(mode, shortcut, command)
   vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
 end

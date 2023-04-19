@@ -51,9 +51,6 @@ return require('packer').startup(function(use)
     end
   }
 
-  -- Syntax checker
-  use {'dense-analysis/ale'}
-
   -- Tree view
   use {
     'nvim-tree/nvim-tree.lua',
