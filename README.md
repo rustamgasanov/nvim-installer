@@ -26,7 +26,3 @@ NOTE: [Nerd font](https://www.nerdfonts.com/) is required to properly display `N
 ## Extending
 
 See https://github.com/rockerBOO/awesome-neovim
-
-## TODO
-
-- add gd/gD(go to definition/declaration)
