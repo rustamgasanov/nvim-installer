@@ -56,7 +56,26 @@ nmap("<Leader><Leader>", ":NvimTreeToggle<CR>")
 nmap("<Leader>f", "<CMD>Telescope find_files<CR>")
 -- <Ctrl> + <\>      = Open console
 require("toggleterm").setup{ direction = "horizontal", size = 15, open_mapping = [[<C-\>]] }
+-- <Ctrl> + <key>    = Navigate LSP items
+-- <Tab>             = Confirm LSP suggestion
+local cmp = require('cmp')
+local cmp_action = require('lsp-zero').cmp_action()
+cmp.setup({
+  mapping = {
+    -- Navigate between completion item
+    ['<C-k>'] = cmp.mapping.select_prev_item(),
+    ['<C-j>'] = cmp.mapping.select_next_item(),
+    -- toggle completion
+    ['<C-u>'] = cmp_action.toggle_completion(),
+    -- navigate between snippet placeholder
+    ['<C-a>'] = cmp_action.luasnip_jump_backward(),
+    ['<C-d>'] = cmp_action.luasnip_jump_forward(),
+    -- Confirm item
+    ['<Tab>'] = cmp.mapping.confirm({select = true}),
+  }
+})
 
+-- Colorscheme
 vim.cmd("colorscheme tokyonight-storm")
 
 -- LSP
