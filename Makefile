@@ -24,7 +24,7 @@ install:
 	else\
 		cd $(PACKER_DIR) && git pull $(PACKER_GIT);\
 	fi
-	@echo "→ Installing packer"
+	@echo "→ Symlinking"
 	mkdir -p $(PACKER_CONFIG_DIR)
 	ln -nfs $(shell pwd)/$(PLUGINS_FILE) $(PACKER_CONFIG_DIR)/$(PLUGINS_FILE)
 	ln -nfs $(shell pwd)/$(INIT_FILE) $(NVIM_CONFIG_DIR)/$(INIT_FILE)
