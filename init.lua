@@ -52,6 +52,8 @@ nmap("<Leader><Leader>", ":NvimTreeToggle<CR>")
 nmap("<Leader>f", "<CMD>Telescope find_files<CR>")
 -- <Ctrl> + <\>      = Open console
 require("toggleterm").setup{ direction = "horizontal", size = 15, open_mapping = [[<C-\>]] }
+-- <Space> + <e>     = Show LSP error diagnostics
+nmap("<Leader>e", ":lua vim.diagnostic.open_float(0, {scope='line'})<CR>")
 -- <Ctrl> + <key>    = Navigate LSP items
 -- <Tab>             = Confirm LSP suggestion
 local cmp = require('cmp')
@@ -70,6 +72,9 @@ cmp.setup({
     ['<Tab>'] = cmp.mapping.confirm({select = true}),
   }
 })
+-- Reminder
+-- <K> = See docs
+-- gd  = Go to definition(<Ctrl> + <o> back)
 
 -- Colorscheme
 vim.cmd("colorscheme tokyonight-storm")
