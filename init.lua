@@ -21,6 +21,12 @@ vim.opt.expandtab = true -- use spaces instead of tabs
 vim.opt.listchars = "tab:»·,nbsp:·,trail:·,extends:>,precedes:<"
 vim.opt.list = true -- display unprintable characters
 
+-- Auto-removal of trailing whitespaces
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = { "*" },
+  command = [[%s/\s\+$//e]],
+})
+
 function map(mode, shortcut, command)
   vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
 end
