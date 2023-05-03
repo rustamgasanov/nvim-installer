@@ -58,7 +58,7 @@ return require('packer').startup(function(use)
       'nvim-tree/nvim-web-devicons', -- optional
     },
     config = function()
-      require("nvim-tree").setup {
+      require('nvim-tree').setup {
         git = {
           ignore = false
         }
@@ -83,10 +83,10 @@ return require('packer').startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true },
     config = function()
-      require("lualine").setup()
+      require('lualine').setup()
     end
   }
 
   -- Toggle terminal
-  use {"akinsho/toggleterm.nvim", tag = '*', config = function() end}
+  use {'akinsho/toggleterm.nvim', tag = '*', config = function() end}
 end)

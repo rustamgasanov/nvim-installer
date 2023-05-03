@@ -1,10 +1,10 @@
 require('plugins')
 
 -- <Space> is <Leader>
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
 
 -- Main config
-vim.opt.clipboard = "unnamed" -- yank goes to clipboard
+vim.opt.clipboard = 'unnamed' -- yank goes to clipboard
 vim.opt.number = true -- display line numbers
 vim.opt.autoindent = true -- copy indent from prev line
 vim.opt.tabstop = 2 -- set tab to 2 spaces
@@ -18,13 +18,24 @@ vim.opt.ruler = true -- show row and column in footer
 vim.opt.scrolloff = 2 -- minimum lines above/below cursor
 vim.opt.laststatus = 2 -- always show status bar
 vim.opt.expandtab = true -- use spaces instead of tabs
-vim.opt.listchars = "tab:»·,nbsp:·,trail:·,extends:>,precedes:<"
+vim.opt.listchars = 'tab:»·,nbsp:·,trail:·,extends:>,precedes:<'
 vim.opt.list = true -- display unprintable characters
 
--- Auto-removal of trailing whitespaces
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-  pattern = { "*" },
+-- Auto-removal of trailing whitespaces on save
+vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+  pattern = { '*' },
   command = [[%s/\s\+$//e]],
+})
+
+-- Auto-format on save
+-- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+
+-- Auto-fix imports in Go
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = '*.go',
+  callback = function()
+    vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
+  end
 })
 
 function map(mode, shortcut, command)
@@ -32,34 +43,34 @@ function map(mode, shortcut, command)
 end
 
 function nmap(shortcut, command)
-  map("n", shortcut, command)
+  map('n', shortcut, command)
 end
 
 function imap(shortcut, command)
-  map("i", shortcut, command)
+  map('i', shortcut, command)
 end
 
 function vmap(shortcut, command)
-  map("v", shortcut, command)
+  map('v', shortcut, command)
 end
 
 function cmap(shortcut, command)
-  map("c", shortcut, command)
+  map('c', shortcut, command)
 end
 
 function tmap(shortcut, command)
-  map("t", shortcut, command)
+  map('t', shortcut, command)
 end
 
 -- Mappings
 -- <Space> + <Space> = NvimTree
-nmap("<Leader><Leader>", ":NvimTreeToggle<CR>")
+nmap('<Leader><Leader>', ':NvimTreeToggle<CR>')
 -- <Space> + <f>     = Telescope search
-nmap("<Leader>f", "<CMD>Telescope find_files<CR>")
+nmap('<Leader>f', '<CMD>Telescope find_files<CR>')
 -- <Ctrl> + <\>      = Open console
-require("toggleterm").setup{ direction = "horizontal", size = 15, open_mapping = [[<C-\>]] }
+require('toggleterm').setup{ direction = 'horizontal', size = 15, open_mapping = [[<C-\>]] }
 -- <Space> + <e>     = Show LSP error diagnostics
-nmap("<Leader>e", ":lua vim.diagnostic.open_float(0, {scope='line'})<CR>")
+nmap('<Leader>e', ":lua vim.diagnostic.open_float(0, {scope='line'})<CR>")
 -- <Ctrl> + <key>    = Navigate LSP items
 -- <Tab>             = Confirm LSP suggestion
 local cmp = require('cmp')
@@ -83,7 +94,7 @@ cmp.setup({
 -- gd  = Go to definition(<Ctrl> + <o> back)
 
 -- Colorscheme
-vim.cmd("colorscheme tokyonight-storm")
+vim.cmd('colorscheme tokyonight-storm')
 
 -- LSP
 local lsp = require('lsp-zero').preset({})
@@ -102,12 +113,3 @@ lsp.ensure_installed({
 -- require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 lsp.setup()
-
--- Go
--- Auto-fix imports
-vim.api.nvim_create_autocmd('BufWritePre', {
-  pattern = '*.go',
-  callback = function()
-    vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
-  end
-})
