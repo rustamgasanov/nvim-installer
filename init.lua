@@ -27,14 +27,12 @@ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   command = [[%s/\s\+$//e]],
 })
 
--- Auto-format on save
--- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
-
--- Auto-fix imports in Go
-vim.api.nvim_create_autocmd('BufWritePre', {
-  pattern = '*.go',
+-- Auto-fix imports and format Golang files
+vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+  pattern = { '*.go' },
   callback = function()
     vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
+    vim.lsp.buf.format()
   end
 })
 
