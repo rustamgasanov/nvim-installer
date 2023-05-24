@@ -103,8 +103,10 @@ end)
 
 lsp.ensure_installed({
   -- Replace these with whatever servers you want to install
+  -- Servers list: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
   'gopls',
   'solargraph',
+  'terraformls',
 })
 
 -- (Optional) Configure lua language server for neovim
