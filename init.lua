@@ -63,6 +63,8 @@ end
 -- Mappings
 -- <Space> + <Space> = NvimTree
 nmap('<Leader><Leader>', ':NvimTreeToggle<CR>')
+-- <Space> + <T> = New tab
+nmap('<Leader>t', ':tabnew<CR>')
 -- <Space> + <f>     = Telescope search
 nmap('<Leader>f', '<CMD>Telescope find_files<CR>')
 -- <Ctrl> + <\>      = Open console
