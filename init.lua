@@ -111,7 +111,12 @@ lsp.ensure_installed({
   'terraformls',
 })
 
--- (Optional) Configure lua language server for neovim
--- require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+-- Don't use terraformls on .tfvars as it's full of errors
+vim.cmd([[
+  augroup FileTypeTerraform
+    autocmd!
+    autocmd BufRead,BufNewFile *.tfvars setlocal filetype=plaintext
+  augroup END
+]])
 
 lsp.setup()
