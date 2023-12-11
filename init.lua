@@ -96,6 +96,10 @@ cmp.setup({
 -- Colorscheme
 vim.cmd('colorscheme tokyonight-storm')
 
+-- Turn off LSP logger which grows indefinitely
+-- Switch to "debug" or comment if you need to debug LSP
+vim.lsp.set_log_level("off")
+
 -- LSP
 local lsp = require('lsp-zero').preset({})
 
