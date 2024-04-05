@@ -110,6 +110,7 @@ end)
 lsp.ensure_installed({
   -- Replace these with whatever servers you want to install
   -- Servers list: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+  -- Type :Mason to update/install LSPs
   'gopls',
   'solargraph',
   'terraformls',
