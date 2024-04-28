@@ -63,7 +63,9 @@ end
 -- Mappings
 -- <Space> + <Space> = NvimTree
 nmap('<Leader><Leader>', ':NvimTreeToggle<CR>')
--- <Space> + <T> = New tab
+-- <Space> + <p>     = Toggle paste mode
+nmap('<Leader>p', ':set invpaste<CR>')
+-- <Space> + <T>     = New tab
 nmap('<Leader>t', ':tabnew<CR>')
 -- <Space> + <f>     = Telescope search
 nmap('<Leader>f', '<CMD>Telescope find_files<CR>')
@@ -92,6 +94,8 @@ cmp.setup({
 -- Reminder
 -- <K> = See docs
 -- gd  = Go to definition(<Ctrl> + <o> back)
+-- <Ctrl> + <i> = go forward
+-- <Ctrl> + <o> = go back
 
 -- Colorscheme
 vim.cmd('colorscheme tokyonight-storm')
