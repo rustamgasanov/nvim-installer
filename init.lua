@@ -97,6 +97,9 @@ cmp.setup({
 -- <Ctrl> + <i> = go forward
 -- <Ctrl> + <o> = go back
 
+-- Language
+vim.cmd('language en_US')
+
 -- Colorscheme
 vim.cmd('colorscheme tokyonight-storm')
 
