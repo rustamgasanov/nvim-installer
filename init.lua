@@ -63,6 +63,8 @@ end
 -- Mappings
 -- <Space> + <Space> = NvimTree
 nmap('<Leader><Leader>', ':NvimTreeToggle<CR>')
+-- <Space> + <j>     = Fold JSON, zO=open all folds, za=toggle fold
+nmap('<Leader>j', ':set foldmethod=syntax<CR>')
 -- <Space> + <p>     = Toggle paste mode
 nmap('<Leader>p', ':set invpaste<CR>')
 -- <Space> + <T>     = New tab
