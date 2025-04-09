@@ -23,6 +23,10 @@ NOTE: [Nerd font](https://www.nerdfonts.com/) is required to properly display `N
 - `~/.config/nvim/lua/plugins.lua` - symlink, *plugins list* and configuration
 - `~/.config/nvim/init.lua` - symlink, vim configuration
 
+## Update LSP
+
+Type `:Mason` to update LSPs
+
 ## Extending
 
 See https://github.com/rockerBOO/awesome-neovim
