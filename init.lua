@@ -67,6 +67,8 @@ nmap('<Leader><Leader>', ':NvimTreeToggle<CR>')
 nmap('<Leader>p', ':set invpaste<CR>')
 -- <Space> + <T>     = New tab
 nmap('<Leader>t', ':tabnew<CR>')
+-- <Space> + <w>     = Move panes(default ctrl+w,w)
+nmap('<Leader>w', '<C-w>w')
 -- <Space> + <f>     = Telescope search
 nmap('<Leader>f', '<CMD>Telescope find_files<CR>')
 -- <Ctrl> + <\>      = Open console
